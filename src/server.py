@@ -1,15 +1,15 @@
 from flask import Flask, request
 
+from src.bot import Bot
 from src.sentiment import SentimentAnalyzer
 
 app = Flask(__name__)
-
-sa = SentimentAnalyzer()
+bot = Bot()
 
 @app.route('/', methods=['POST'])
 def hello_world():
-    val = sa.predict(list(request.form)[0])
-    return ":)\n" if val == 1 else ":(\n"
+    input = list(request.form)[0]
+    return bot.get_response(input)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,6 @@
+.idea/
+sa/
+src/__pycache__/bot.cpython-37.pyc
+*.pyc
+src/__pycache__/sentiment.cpython-37.pyc
+src/__pycache__/
